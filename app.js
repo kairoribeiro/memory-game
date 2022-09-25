@@ -11,9 +11,6 @@ let lockBoard = false;
 
 /*------------------------ Cached Element References ------------------------*/
 const cards = document.querySelectorAll('.memory-card');
-const frontFace = document.querySelectorAll('.front-face');
-const backFace = document.querySelectorAll('.back-face');
-
 
 /*----------------------------- Event Listeners -----------------------------*/
 cards.forEach(card => card.addEventListener("click", flipCard));
@@ -22,7 +19,7 @@ cards.forEach(card => card.addEventListener("click", flipCard));
 /*-------------------------------- Functions --------------------------------*/
 function flipCard() {
     if(lockBoard) return; //lockBord true here | if cards flipped true don't execute rest of the code
-    if(this === firstCard) return; //if first card clicked is 
+    if(this === firstCard) return; //if first card clicked is
     this.classList.add('flip');
     if (!hasFlippedCard) {
         //first click
@@ -75,7 +72,7 @@ function resetBoard() {
 // Executed after its definiton
 (function shuffle () {
     cards.forEach(card => {
-        let randomPos = Math.floor(Math.random() * 12);
+        let randomPos = Math.floor(Math.random() * 16);
         card.style.order = randomPos;
     });
 })();
