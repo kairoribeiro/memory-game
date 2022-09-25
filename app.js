@@ -69,3 +69,13 @@ function resetBoard() {
     firstCard = null;
     secondCard = null;
 }
+
+
+//IIFE (Immetiately Invoked Function Expression)
+// Executed after its definiton
+(function shuffle () {
+    cards.forEach(card => {
+        let randomPos = Math.floor(Math.random() * 12);
+        card.style.order = randomPos;
+    });
+})();
